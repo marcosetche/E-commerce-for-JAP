@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>e-MERCADO - Inicio</title>
+  <link rel="shortcut icon" href="img/login.png">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+   body {
+  background: url(img/fondo2.jpg) no-repeat center top;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.login-box {
+  width: 320px;
+  height: 420px;
+  background: black;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+.login-box .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.login-box h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-box button[type="submit"]{
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #b80f22;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.login-box button[type="submit"]:hover {
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+}
+
+.login-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.login-box a:hover{
+  color: #fff;
+}
+#datos{
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.labelDatos {
+  font-size: 16px;
+}
+  </style>
+</head>
+
+<body class="text-center">
+  <div class="login-box">
+    <img src="img/logo1.jpg" class="avatar" alt="Logo plan ceibal">
+    <h1 class="signin">Ingresa tus datos</h1>
+    <form id="formulario">
+      <!-- USERNAME INPUT -->
+      <label for="username">Nombre de usuario o email</label>
+      <input type="text" placeholder="Ingresa nombre de usuario o email" id="campoemail" required>
+      <!-- PASSWORD INPUT -->
+      <label for="password">Contraseña</label>
+      <input type="password" id="campocontrasenia" placeholder="Ingresa tu contraseña" required>
+      <button id="iniciar_sesion" type="submit">Iniciar sesión</button><br>
+      <label for="Recordarme" class="labelDatos">Recordar mis datos</label>
+     <input type="checkbox" value="Recordarme" id="datos" name="Recordarme">
+     <br>
+     <a href="#">Perdiste tu contraseña?</a><br>
+      <a href="#">Aún no creaste tu cuenta?</a>
+    </form>
+  </div> 
+ 
+  <script src="js/init.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
+<!-- 
+  El login desarrollado fue basado en el siguiente codigo:
+  https://github.com/FaztWeb/login-form-one
+  
+-->
