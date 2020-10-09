@@ -73,7 +73,7 @@ function showProductosList(array){
                 //acá estuve modificando las fuentes, tamaños y el lugar para que quede mas prolijo la presentación de los productos.
                 "<div class='col'>"+
                     "<div class='d-flex w-100 justify-content-between'>"+
-                        "<h4 class='mb-1'>"+ "<font face='Helvetica, Arial, sans-serif' size=5>" + producto.name + "</font>" +"</h4>"+ "<br>" +
+                        "<h4 class='mb-1'>"+ "<a href='product-info.html'><font face='Helvetica, Arial, sans-serif' size=5>" + producto.name + "</font></a>" +"</h4>"+ "<br>" +
                         "<h5>" + "<font face='Lucida Sans' size=4>" + "<strong>"  + producto.cost + " " + producto.currency + "</strong>" + "</font>" + "</h5>"+
                     "</div>"+
                   
@@ -116,7 +116,7 @@ function ordenar(tipo){ //recibe la variable tipo, que indica la manera de orden
 }
 }
 
-function buscar(filtro){
+function buscar(filtro){  // esta función filtra los elementos según el filtro recibido por parámetro, además se pasó todo a minúscula para evitar el case sensitive
     return productosArray.filter(function(a){
         return a.name.toLowerCase().includes(filtro.toLowerCase());
     });

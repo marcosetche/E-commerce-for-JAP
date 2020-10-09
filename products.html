@@ -18,16 +18,25 @@
   </head>
   <body>
     
-    <nav class="site-header sticky-top py-1 bg-dark">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a href="#" id="username"></a> <!-- 
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+          </a>
+        
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
+            <a class="dropdown-item" href="#">Mi perfil</a>
+            <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+          </div>
+        </div> <!-- 
           agrego este a para poner el nombre de usuario o email de quien haya ingresado, aunque me hubiera gustado hacerlo de otra manera
-        IMPORTANTE: para que el nombre aparezca en la esquina superior derecha hay que usar el botón de RECORDAR MIS DATOS
+        IMPORTANTE: para que el nombre aparezca actualizado en la esquina superior derecha hay que usar el botón de RECORDAR MIS DATOS
         -->
       </div>
     </nav>  
@@ -35,12 +44,17 @@
     
     <!-- Acá usé boostrap (agregado manualmente porque el que está por defecto está mal cargado o algún error tiene) para poder poner 
     los botones con sus respectivos íconos-->
-
+<div class="text-center p-4 pb-5" >
+  <h2><b>Productos</b></h2>
+</div>
     <div style="border-color: 1px solid black; width: 100%; height: 25px; padding-left: 10%;">
       <div style="display: inline-block;">
         <input type="number" id="minimo" placeholder="Mínimo"> - <input type="number" id="maximo" placeholder="Máximo">
+
           <button type="button" class="btn btn-default" id="btnRANGO">
+
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
           </button>
         </div>
         <div style="display: inline-block; text-align: center;">
@@ -52,10 +66,10 @@
             <span class="glyphicon glyphicon-star-empty" aria-hidden="true">Más relevantes</span>
           </button>
           <button type="button" class="btn btn-default  btn-lg" id="btnAZ">
-            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true">$</span>
           </button>
           <button type="button" class="btn btn-default  btn-lg" id="btnZA">
-            <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true">$</span>
           </button>
         </div>
     </div>

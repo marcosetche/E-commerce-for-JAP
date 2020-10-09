@@ -1,18 +1,45 @@
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
+.com_user , .com_name , .com_fecha , .com_desc{
 
+}
+#comentar {
+
+}
+
+#labelNOM{
+  margin-left: 30px;
+}
+.com_star {
+  color: white;
+
+}
+#cajaNAME{
+  width: 200px;
+  height: 30px;
+}
+#cajaCOM{
+  width: 200px;
+  height: 100px;
+}
+.com_user{
+  border-radius: 3cm;
+  color:blue;
+  font-weight: bold;
+}
+.com_fecha{
+  color: gray;
+}
+.com_desc{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: black;
+}
 .jumbotron .display-4{
     font-weight: bold;
 }
 /* con esta clase modifico las caracteristicas del nombre de usuario mostrado arriba a la derecha */
-#username {  
-font-family: Verdana, Geneva, Tahoma, sans-serif ;
-color:rgb(255, 255, 224);
-text-align: right;
-font-size: 15px;
-margin-right: 70px;
-text-indent: 55%;
+
 
 }
 
@@ -148,4 +175,20 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.estilo_comentario {
+  width: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+
+}
+.com_user{
+  margin-left: 5%;
+}
+.com_desc{
+  margin-left: 1%;
+}
+.com_fecha{
+  margin-left: 87%;
 }

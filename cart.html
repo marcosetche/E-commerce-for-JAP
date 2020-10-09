@@ -34,24 +34,48 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="username"></a>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge badge-light" id="cantCART">2</span></a>
+          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  
+  <div class="container" style="width: auto; margin-top: 3%;">
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Moneda</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Subtotal</th>
+          
+        </tr>
+      </thead>
+      <tbody id="bodyTabla">
+        
+      </tbody>
+    </table>
   </div>
+  <a href="categories.html" type="button" style="margin-left: 130px;" class="btn btn-primary">Seguir comprando</button></a>
+ <a href="#" style="width: 110px; margin-left: 840px; color: white;" type="button" class="btn btn-success">Pagar</button></a>
+ 
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

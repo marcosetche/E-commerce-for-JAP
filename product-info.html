@@ -16,24 +16,75 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="#" id="username"></a>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
+          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+  <div class="list-group-item">
+   
+<div id="informacion">
+</div>
+<div id="comentarios">
+</div>
+<div id="comentar">
+  <label id="labelNOM" for="cajaNOMBRE">Nombre</label>
+  <input type="text" row="3" name="cajaNOMBRE" class="form-control" id="cajaNAME"><br>
+  <label for="cajaCOMENTARIOS">Comentario</label>
+  <input type="text" name="cajaCOMENTARIOS" class="form-control" id="cajaCOM">
+<br>
+
+<label for="puntos">Cant. de estrellas</label>
+<div  style="margin-right: 96%;"><select class="form-control form-control-sm" id="puntaje" name="puntos">
+  <option value="1">1</option>
+  <option value="2">2</option> 
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select></div>
+
+<p id="puntuacion">
+  Puntaje:<span id="calif"></span></p>
+  <input class="btn btn-success" style="margin-left: 120px;
+  width: 100px; height: 40px;" type="submit" value="Comentar" id="inpCOM"></input></div></div><br><br>
+   <div id="productosRelacionados"></div>
+<script>
+   function puntuacion(){
+     var puntos = document.getElementById("puntaje").value;
+     var estrellas = '';
+   for(let i = 1; i <=5; i ++) {
+     if (i<=puntos){
+       estrellas += '<i class="fas fa-star checked"></i>';
+     }else{
+       estrellas += '<i class="far fa-star"></i>';
+     }
+     }
+     document.getElementById('calif').innerHTML=estrellas;
+   };       
+   document.getElementById('puntaje').addEventListener('change', function(){
+     puntuacion(document.getElementById('puntaje').value);
+
+   });
+
+</script>
+<div id="productosRelacionados">
+ 
+  
+</div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
