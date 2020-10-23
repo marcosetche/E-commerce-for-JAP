@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        var lista=[];
+        function guardar(){
+            var personas={}; //defino el objeto
+            var nom=document.getElementById('nombre').value;//obtengo los valores
+            var edad=document.getElementById('edad').value;
+
+            personas.nombre=nom;//guardo los valores
+            personas.edad=edad;
+            
+            lista.push(personas); //agrego los valores al final de la colección
+            mostrar(lista);//llamo a la funcion para mostrar los datos
+        }
+
+        function mostrar(lista){
+
+        var tabla = "<table border =1> <th> Nombres </th><th>Edad</th>"; //escribe el encabezado
+        for (i=0; i<lista.length; i++){
+
+            tabla+="<tr align='center'><td>" + lista[i].nombre + "</td><td>" + lista[i].edad +"</td></tr>";
+        }
+        tabla+="</table>";
+        document.getElementById('lista').innerHTML=tabla;
+        }
+
+        function ordenar(){
+            lista.sort( function(ant, sig){
+                return ant.edad-sig.edad; //comparo el campo edad
+            });
+            mostrar(lista);
+        }
+        function ordenonombre(){
+            lista.sort( function(ant, sig){ //comparando el campo nombre
+                if (ant.nombre > sig.nombre){
+                    return 1;
+                }
+                if (ant.nombre < sig.nombre) {
+                    return -1;
+                } 
+                return 0;
+            
+            });
+            mostrar(lista);
+        }
+    </script>
+</head>
+<body style="margin-left: 10px;">
+    
+    <h1 style="font-size:1cm;"> Factura</h1>
+<p style="font-weight:bold;">Producto :<input type="text" id="nombre"></p>
+
+<p style="font-weight:bold;">Precio: <input type="number" id="edad"></p><br>
+
+
+<button class="btn btn-primary" onclick="guardar();">Guardar</button>
+<button class="btn btn-primary" onclick="ordenar();">Ordenar por precio</button>
+<button class="btn btn-primary" onclick="ordenonombre();">Ordenar por nombre</button><br><br>
+<a style="color:cornflowerblue;" href="carrito.html">Ir al carrito</a>
+<div id="lista"></div>
+</body>
+<script src="pruebamiljs.js"></script>
+</html>

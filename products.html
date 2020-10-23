@@ -1,98 +1,114 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-  </head>
-  <body>
-    
-    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-          </a>
-        
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
-            <a class="dropdown-item" href="#">Mi perfil</a>
-            <a class="dropdown-item" href="index.html">Cerrar sesión</a>
-          </div>
-        </div> <!-- 
+</head>
+
+<body>
+
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
+          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+        </div>
+      </div>
+      <!-- 
           agrego este a para poner el nombre de usuario o email de quien haya ingresado, aunque me hubiera gustado hacerlo de otra manera
         IMPORTANTE: para que el nombre aparezca actualizado en la esquina superior derecha hay que usar el botón de RECORDAR MIS DATOS
         -->
-      </div>
-    </nav>  
-    <br>
-    
-    <!-- Acá usé boostrap (agregado manualmente porque el que está por defecto está mal cargado o algún error tiene) para poder poner 
-    los botones con sus respectivos íconos-->
-<div class="text-center p-4 pb-5" >
-  <h2><b>Productos</b></h2>
-</div>
-    <div style="border-color: 1px solid black; width: 100%; height: 25px; padding-left: 10%;">
-      <div style="display: inline-block;">
-        <input type="number" id="minimo" placeholder="Mínimo"> - <input type="number" id="maximo" placeholder="Máximo">
-
-          <button type="button" class="btn btn-default" id="btnRANGO">
-
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-          </button>
-        </div>
-        <div style="display: inline-block; text-align: center;">
-          <label for="btnb">Buscar:</label> 
-          <input name="btnb" type="search" id="buscador" style="border: solid 2px;" placeholder="...">
-        </div>
-        <div style="display: inline-block;" class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default  btn-lg" id="btnRelevancia">
-            <span class="glyphicon glyphicon-star-empty" aria-hidden="true">Más relevantes</span>
-          </button>
-          <button type="button" class="btn btn-default  btn-lg" id="btnAZ">
-            <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true">$</span>
-          </button>
-          <button type="button" class="btn btn-default  btn-lg" id="btnZA">
-            <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true">$</span>
-          </button>
-        </div>
     </div>
+  </nav>
+  <br>
+
+  <!-- Acá usé boostrap (agregado manualmente porque el que está por defecto está mal cargado o algún error tiene) para poder poner 
+    los botones con sus respectivos íconos-->
+  <div class="text-center p-4 pb-5">
+    <h2><b>Productos</b></h2>
+  </div>
+  <div style="border-color: 1px solid black; width: 100%; height: 25px; padding-left: 10%;">
+    <div style="display: inline-block;">
+      <input type="number" id="minimo" placeholder="Mínimo"> - <input type="number" id="maximo" placeholder="Máximo">
+
+      <button type="button" class="btn btn-default" id="btnRANGO">
+
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+      </button>
+    </div>
+    <div style="display: inline-block; text-align: center;
+                    margin-left: 80px;
+                    margin-right: 80px;">
+
+      <input placeholder="Buscador de productos..." class="form-control form-control-sm" name="btnb" type="search"
+        id="buscador" style="border: solid 2px;" placeholder="...">
+    </div>
+    <div style="display: inline-block;" class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default  btn-lg" id="btnRelevancia">
+        <span class="glyphicon glyphicon-star-empty" aria-hidden="true">Más relevantes</span>
+      </button>
+      <button type="button" class="btn btn-default  btn-lg" id="btnAZ">
+        <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true">$</span>
+      </button>
+      <button type="button" class="btn btn-default  btn-lg" id="btnZA">
+        <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true">$</span>
+      </button>
+    </div>
+  </div>
 
   <br>
-  
-    <div class="container p-5" id="cat-list-container">
-     
+
+  <div class="container p-5" id="cat-list-container">
+
+  </div>
+  <div id="cantproductos" style="font-size: 19px;"></div>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
-    <div id="cantproductos" style="font-size: 19px;"></div>
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-      </div>
-    </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
-  </body>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+</body>
+
 </html>

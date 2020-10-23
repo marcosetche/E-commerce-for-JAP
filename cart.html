@@ -11,6 +11,10 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
 
   <style>
     .bd-placeholder-img {
@@ -31,9 +35,11 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <script src="./js/departamentos.js"></script>
 </head>
 
 <body>
+  
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -42,18 +48,19 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
-         aria-haspopup="true" aria-expanded="false">
+          aria-haspopup="true" aria-expanded="false">
 
         </a>
-      
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge badge-light" id="cantCART">2</span></a>
+          <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge badge-light"
+              id="cantCART">2</span></a>
           <a class="dropdown-item" href="#">Mi perfil</a>
           <a class="dropdown-item" href="index.html">Cerrar sesión</a>
         </div>
-    </div>
+      </div>
   </nav>
-  
+
   <div class="container" style="width: auto; margin-top: 3%;">
 
     <table class="table">
@@ -65,17 +72,19 @@
           <th scope="col">Precio</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Subtotal</th>
-          
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody id="bodyTabla">
-        
+
       </tbody>
     </table>
   </div>
-  <a href="categories.html" type="button" style="margin-left: 130px;" class="btn btn-primary">Seguir comprando</button></a>
- <a href="#" style="width: 110px; margin-left: 840px; color: white;" type="button" class="btn btn-success">Pagar</button></a>
- 
+  <a href="categories.html" type="button" style="margin-left: 10%;" class="btn btn-primary">Seguir comprando</a>
+
+  <button style="width: 110px; margin-left: 840px; color: white;" type="button" class="btn btn-success"
+    data-toggle="modal" data-target='#modalpago' id='btnPagar' disabled>Pagar</button>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -84,11 +93,152 @@
       <div></div>
     </div>
   </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+  <div class="container">
+    <div class="modal" tabindex="-1" id="modalmetodo">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div required>
+            <div class="modal-header">Métodos de envío
+              <button class="btn btn-danger" data-dismiss='modal'>&times;</button>
+
+            </div>
+            <div class="modal-body">
+              <div required class="radio">
+                <input required type="radio" name="optradio" checked id="gold" value="G"><label for="gold"
+                  id="txtGold"></label><br>
+
+                <input required type="radio" name="optradio" id="premium" value="P"><label for="premium"
+                  id="txtPremium"></label><br>
+
+                <input required type="radio" name="optradio" id="estandar" value="E"><label for="estandar"
+                  id="txtEstandar"></label>
+                  
+              </div>
+
+            </div>
+
+            <div required class="container" id="divDptos">
+              <label for="inputmetodo" required class="col-lg-2 control-label"></label>
+
+              <script>
+                cargarDepartamentos();
+              </script>
+            </div>
+            <div class="container" id="divCiudades" required>
+
+            </div>
+            <div required class="form-group creditCardForm1">
+              <input class="form-control" placeholder="Ingresa las calles y el número" id="calle" required>
+            </div>
+
+            <div class="modal-footer">
+
+
+              <button class="btn btn-success" id="btnPAGO" required>Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="modal" tabindex="-1" id="modalpago">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header owner">
+              <h1>Métodos de pago</h1>
+              <button class="btn btn-danger" data-dismiss='modal'>&times;</button>
+
+            </div>
+            <div class="modal-body">
+              <script>
+                function tarjeta1() {
+                  document.getElementById("cuentaban").disabled = true;
+                  document.getElementById("cardNumber").disabled = false;
+                  document.getElementById("expiry").disabled = false;
+                  document.getElementById("cvv").disabled = false;
+                  document.getElementById("owner").disabled = false;
+
+                  var cuentabanco = document.getElementById("cuentaban")
+
+                  cuentabanco.value = "";
+                }
+            
+                function cuentaBancaria(){
+                  
+                  document.getElementById("cuentaban").disabled = false;
+                  document.getElementById("cardNumber").disabled = true;
+                  document.getElementById("expiry").disabled = true;
+                  document.getElementById("cvv").disabled = true;
+                  document.getElementById("owner").disabled = true;
+                  var numerito = document.getElementById("cardNumber");
+                  var expiracion = document.getElementById("expiry");
+                  var elcvv = document.getElementById("cvv");
+                  var dueño = document.getElementById("owner");
+                  dueño.value = "";
+                  elcvv.value = "";
+                  expiracion.value = "";
+                  numerito.value = "";
+                  
+                }
+            
+              </script>
+              <div class="creditCardForm">
+                
+                <div class="payment">
+                  <form>
+                    <h2>Elige tu forma de pago</h2>
+                    <div class="form-group">
+                    
+                      <input required type="radio" name="tarjeta" onclick="tarjeta1()" > <img src="img/visa.png" alt="Visa" id="visa">
+                      <input required type="radio" name="tarjeta" onclick="tarjeta1()"> <img src="img/mastercard.png" alt="Mastercard" id="mastercard">
+                      <input required type="radio" name="tarjeta" onclick="tarjeta1()"> <img src="img/amex.png" alt="American Express" id="amex">
+                      <input required type="radio" name="tarjeta" onclick="cuentaBancaria()"> <img src="img/cuenta bancaria.png" alt="Cuenta bancaria" id="amex">
+                      
+                    </div>
+                 
+                    <div class="form-group owner">
+                      <label for="owner">Títular *</label>
+                      <input required type="text" class="form-control" id="owner">
+                    </div>
+                    <div class="form-group" id="card-number-field">
+                      <label for="cardNumber">Número de tarjeta</label>
+                      <input type="text" required class="form-control" id="cardNumber">
+                    </div>
+                    
+                    <div required class="form-group" id="expiration-date">
+                      <label required>Fecha de expiración</label>
+                      <input class="inputCard" name="expiry" id="expiry" type="month" required>
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                      <label for="cvv">CVV</label>
+                      <input type="text" maxlength="3" required class="form-control" id="cvv">
+                    </div>
+                    <label  for="cuentab">Número de cuenta bancaria</label>
+                   <input class="form-group form-control" id="cuentaban" type="text" name="cuentab"> 
+                    
+                    
+                    <div class="form-group" id="pay-now">
+                      <button type="submit" class="btn btn-default" id="confirm-purchase" required>Confirmar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+      <script src="assets/js/script.js"></script>
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/dropzone.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/cart.js"></script>
 </body>
 
 </html>
