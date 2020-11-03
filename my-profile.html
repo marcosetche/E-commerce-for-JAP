@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
   <style>
@@ -33,59 +33,184 @@
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
+
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+
       <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
 
         </a>
-      
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
-          <a class="dropdown-item" href="#">Mi perfil</a>
-          <a class="dropdown-item" href="index.html">Cerrar sesión</a>
-        </div>
+        <form id="dropdownMenu">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="index.html">Cerrar sesión</a>
+
+          </div>
       </div>
     </div>
+    </form>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+    <div class="container well">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Mi perfil </h2>
+        </div>
+      </div>
+      <br><br>
+
+      <form class="form-horizontal">
+
+
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="formGroup">Nombre</label>
+          <div class="col-sm-4">
+            <input required class="form-control" type="text" id="formNombre" placeholder="Tu nombre">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="formGroup">Apellidos</label>
+          <div class="col-sm-4">
+            <input required class="form-control" type="text" id="formApellido" placeholder="Tus apellidos"><br>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="formGroup">Edad</label>
+          <div class="col-sm-4">
+            <input required class="form-control" type="text" id="formEdad" placeholder="Tu edad">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="formTel" id="tel">Teléfono</label>
+
+          <div class="input-group col-sm-3"><a target="_blank"
+              href="https://es.wikipedia.org/wiki/N%C3%BAmero_de_tel%C3%A9fono#:~:text=Un%20n%C3%BAmero%20de%20tel%C3%A9fono%20es,punto%20final%20de%20la%20llamada."
+              class="text-decoration-none btn btn-outline-primary"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                class="bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z" />
+              </svg></a>
+            </span>
+            <input required class="form-control" type="text" id="formTel" placeholder="Número telefónico">
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="formGroup" id="email">Correo electrónico</label>
+          <div class="input-group col-sm-3"><a target="_blank"
+              href="https://es.wikipedia.org/wiki/Correo_electr%C3%B3nico"
+              class="text-decoration-none btn btn-outline-primary">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-at" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z" />
+              </svg></a>
+            <input required class="form-control" type="email" id="formCorreo" placeholder="Correo electrónico">
+            <br><br>
+          </div>
+        </div>
+
+      </form>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="formGroup"></label>
+        <div class="col-sm-4">
+
+          <button required id="btnGuardarDatos" type="submit" class="btn btn-success btn-lg"><span
+              class="glyphicon glyphicon-floppy-saved"></span>
+            Guardar los datos</button>
+
+          <button required data-toggle="modal" data-target='#modaleditar' style="margin-left:50px" id="btnEditarDatos"
+            type="submit" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-floppy-open"></span>
+            Editar los datos</button>
+
+
+
+
+
+          </form>
+          <div class="container">
+            <div class="modal" tabindex="-1" id="modaleditar">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <div class="modal-header owner">
+                    <h1>Ingresa tu contraseña para editar los datos.</h1>
+                    <button class="btn btn-danger" data-dismiss='modal'>&times;</button>
+
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="form-group">
+                      <label for="formPass">Contraseña</label>
+                      <div>
+
+                        <input required class="form-control" type="password" id="formPass"
+                          placeholder="Ingresa tu contraseña">
+                      </div>
+                      <br><br>
+
+                      <div class="form-group">
+                        <button data-dismiss="modal" onclick="comprobarPass();" type="submit" class="btn btn-success"
+                          required>Confirmar</button>
+                      </div>
+                      * Recuerda que tu contraseña es la misma que usaste para iniciar sesión. *
+                    </div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+
+    <footer class="text-muted bg-light">
+      <div class="container">
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div class="alert fade alert-success" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/my-profile.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/my-profile.js"></script>
 </body>
 
 </html>

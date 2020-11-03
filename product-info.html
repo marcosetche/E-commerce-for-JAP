@@ -23,68 +23,70 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
 
         </a>
-      
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="cart.html">Ver mi carrito<span class="badge">4</span></a>
-          <a class="dropdown-item" href="#">Mi perfil</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
           <a class="dropdown-item" href="index.html">Cerrar sesión</a>
         </div>
       </div>
     </div>
   </nav>
   <div class="list-group-item">
-   
-<div id="informacion">
-</div>
-<div id="comentarios">
-</div>
-<div id="comentar">
-  <label id="labelNOM" for="cajaNOMBRE">Nombre</label>
-  <input type="text" row="3" name="cajaNOMBRE" class="form-control" id="cajaNAME"><br>
-  <label for="cajaCOMENTARIOS">Comentario</label>
-  <input type="text" name="cajaCOMENTARIOS" class="form-control" id="cajaCOM">
-<br>
 
-<label for="puntos">Cant. de estrellas</label>
-<div  style="margin-right: 96%;"><select class="form-control form-control-sm" id="puntaje" name="puntos">
-  <option value="1">1</option>
-  <option value="2">2</option> 
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-</select></div>
+    <div id="informacion">
+    </div>
+    <div id="comentarios">
+    </div>
+    <div id="comentar">
+      <label id="labelNOM" for="cajaNOMBRE">Nombre</label>
+      <input type="text" row="3" name="cajaNOMBRE" class="form-control" id="cajaNAME"><br>
+      <label for="cajaCOMENTARIOS">Comentario</label>
+      <input type="text" name="cajaCOMENTARIOS" class="form-control" id="cajaCOM">
+      <br>
 
-<p id="puntuacion">
-  Puntaje:<span id="calif"></span></p>
-  <input class="btn btn-success" style="margin-left: 120px;
-  width: 100px; height: 40px;" type="submit" value="Comentar" id="inpCOM"></input></div></div><br><br>
-   <div id="productosRelacionados"></div>
-<script>
-   function puntuacion(){
-     var puntos = document.getElementById("puntaje").value;
-     var estrellas = '';
-   for(let i = 1; i <=5; i ++) {
-     if (i<=puntos){
-       estrellas += '<i class="fas fa-star checked"></i>';
-     }else{
-       estrellas += '<i class="far fa-star"></i>';
-     }
-     }
-     document.getElementById('calif').innerHTML=estrellas;
-   };       
-   document.getElementById('puntaje').addEventListener('change', function(){
-     puntuacion(document.getElementById('puntaje').value);
+      <label for="puntos">Cant. de estrellas</label>
+      <div style="margin-right: 96%;"><select class="form-control form-control-sm" id="puntaje" name="puntos">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select></div>
 
-   });
+      <p id="puntuacion">
+        Puntaje:<span id="calif"></span></p>
+      <input class="btn btn-success" style="margin-left: 120px;
+  width: 100px; height: 40px;" type="submit" value="Comentar" id="inpCOM"></input>
+    </div>
+  </div><br><br>
+  <div id="productosRelacionados" class="container"> 
+    <div class="row"></div>
+  </div>
+  <script>
+    function puntuacion() {
+      var puntos = document.getElementById("puntaje").value;
+      var estrellas = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= puntos) {
+          estrellas += '<i class="fas fa-star checked"></i>';
+        } else {
+          estrellas += '<i class="far fa-star"></i>';
+        }
+      }
+      document.getElementById('calif').innerHTML = estrellas;
+    };
+    document.getElementById('puntaje').addEventListener('change', function () {
+      puntuacion(document.getElementById('puntaje').value);
 
-</script>
-<div id="productosRelacionados">
- 
+    });
+
+  </script>
   
-</div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
